@@ -1,5 +1,5 @@
 module.exports = {
     entry: {
-        app: ['./src/Book.js', './src/Shelf.js', './src/test.js', './src/Utility.js']
+        app: ['./src/js/Book.js', './src/js/Shelf.js', './src/js/test.js', './src/js/Utility.js']
     }
   };

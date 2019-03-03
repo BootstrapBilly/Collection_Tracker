@@ -168,3 +168,4 @@ var Test = /** @class */ (function () {
     return Test;
 }());
 var test = new Test();
+console.log("test");
