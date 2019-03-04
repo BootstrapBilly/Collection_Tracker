@@ -1,3 +1,4 @@
+
 /* A helper class for the buyOrNot method in Shelf class, contains two methods;
 
 compare and checkCondition  */

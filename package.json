@@ -12,10 +12,13 @@
   "license": "ISC",
   "homepage": "https://BootstrapBilly.github.io/Collection_Tracker",
   "devDependencies": {
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
     "typescript": "^3.3.3333"
   }

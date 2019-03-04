@@ -1,0 +1,60 @@
+.bg-darkk {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#section1 {
+  position: relative;
+  background: url("/src/img/showcase.jpg");
+  background-size: cover;
+  min-height: 32rem;
+}
+
+#mini-section1 {
+  display: none;
+}
+
+#section {
+  padding: 0px 10px;
+}
+
+#section2 {
+  margin: 0px 50px;
+  padding: 0px 10px;
+  margin-top: 20px;
+}
+
+#desktop-text {
+  padding: 20px;
+  font-size: 1.7vw;
+}
+
+#map {
+  margin-top: 0px;
+  min-height: 330px;
+}
+
+#section3 {
+  margin: 0px 50px;
+  padding: 0px 10px;
+}
+
+#showcase-name {
+  background-color: rgba(0, 0, 0, 0.85);
+  display: inline-block;
+  padding: 20px;
+}
+
+#showcase-description {
+  background-color: rgba(0, 0, 0, 0.85);
+  display: inline-block;
+}
+
+#phone-contact a, #email-contact a {
+  padding-right: 50px;
+  display: inline;
+}
+
+#footer {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+/*# sourceMappingURL=desktop.css.map */
