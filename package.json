@@ -20,6 +20,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
+    "typed.js": "^2.0.10",
     "typescript": "^3.3.3333"
   }
 }

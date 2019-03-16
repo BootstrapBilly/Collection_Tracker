@@ -1,9 +1,16 @@
 body{
+
     background: url(/src/img/mobile-background.svg) no-repeat;
     background-size:cover;
     
-    header {
-        font-size: 40px;
-        margin-top: 10px;
-    }
+        header {
+            font-size: 30px;
+            font-family: "Courier New, Courier, monospace";
+            line-height: 0.8;
+        }
+
+        #collection, #tracker {
+            color: beige;
+        }
+
 }

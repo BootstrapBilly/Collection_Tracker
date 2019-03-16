@@ -4,7 +4,12 @@ body {
 }
 
 body header {
-  font-size: 40px;
-  margin-top: 10px;
+  font-size: 30px;
+  font-family: "Courier New, Courier, monospace";
+  line-height: 0.8;
+}
+
+body #collection, body #tracker {
+  color: beige;
 }
 /*# sourceMappingURL=style.css.map */
