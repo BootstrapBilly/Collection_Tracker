@@ -8,6 +8,6 @@ module.exports = {
        ]
     },
     entry: {
-        app: ['./src/js/Book.js', './src/js/Shelf.js', './src/js/test.js', './src/js/Utility.js']
+        app: ['./src/js/Book.js', './src/js/Shelf.js', './src/js/test.js', './src/js/Utility.js', "./src/js/main.js"]
     }
   };

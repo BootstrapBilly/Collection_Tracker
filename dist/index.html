@@ -16,41 +16,53 @@
 </head>
 <body>
 
+<div class="top">
 <!-- Menu -->
-<img src="/src/img/menu.png" class="float-right mr-3" alt="">
+<img src="/src/img/menu.png" class="float-right mr-3" id="menu-open">
 
 <!-- Heading -->
-<header class="text-left pl-3 mt-4" id="collection"></header>
-<header class="text-left pl-3" id="tracker"></header>
+<header class="text-left pl-3 mt-4" id="collection">Collection</header>
+<header class="text-left pl-3" id="tracker">Tracker</header>
 
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" id="menu-close">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#" id="find-book">Find a book</a>
+    <a href="#" id="add-book">Add a book</a>
+    <a href="#">Should I buy it?</a>
+    <a href="#">Show all books</a>
+  </div>
+
+</div>
+</div>
+<!-- main content -->
+<main class="container my-3">
+
+  <input type="text" id="input-box" class="form-control d-inline" style="visibility: hidden">
+  <select class="form-control d-inline" id="dropdown-box" style="visibility: hidden">
+    <option value="poor">Bad</option>
+    <option value="fair">Fair</option>
+    <option value="good">Good</option>
+  </select>
+  <!-- <input type="" id="input-year" class="form-control d-inline" style="visibility: visible"> -->
+
+</main>
 
 
   <script src="app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+
   <script>
- $("document").ready(function(){
-
-   var collection = new Typed("#collection",{
-    strings: ["Collection"],
-    typeSpeed:60,
-    showCursor: false,
-    onComplete: (self) => {runTracker()},
-   });
-
-function runTracker(){
-   var tracker = new Typed("#tracker",{
-    strings: ["Tracker"],
-    typeSpeed:100,
-    showCursor: false,
-   });
-}
-
- });
-            
+   /* Open when someone clicks on the span element */
+       
   </script>
 
 </body>

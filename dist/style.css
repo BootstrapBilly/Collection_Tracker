@@ -1,6 +1,12 @@
 body {
   background: url(/src/img/mobile-background.svg) no-repeat;
   background-size: cover;
+  /* The Overlay (background) */
+  /* Position the content inside the overlay */
+  /* The navigation links inside the overlay */
+  /* When you mouse over the navigation links, change their color */
+  /* Position the close button (top right corner) */
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 }
 
 body header {
@@ -11,5 +17,86 @@ body header {
 
 body #collection, body #tracker {
   color: beige;
+}
+
+body .overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: black;
+  /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+body .overlay-content {
+  position: relative;
+  top: 25%;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  text-align: center;
+  /* Centered text/links */
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+body .overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: beige;
+  display: block;
+  /* Display block instead of inline */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+}
+
+body .overlay a:hover, body .overlay a:focus {
+  color: #f1f1f1;
+}
+
+body .overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  body .overlay a {
+    font-size: 20px;
+  }
+  body .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+body .container #input-box {
+  margin-left: 33px;
+  width: 80%;
+}
+
+body .container #input-box-add {
+  margin-left: 13px;
+  width: 60%;
+}
+
+body .container #dropdown-box {
+  width: 30%;
 }
 /*# sourceMappingURL=style.css.map */
