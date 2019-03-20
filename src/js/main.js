@@ -47,6 +47,8 @@ function closeMenu (){
 
 //grab the input box and store it in a variable called inputBox
 const inputBox = document.getElementById("input-box");
+//grab the dropdown box and store it in a variable called dropdown box
+const dropdownBox = document.getElementById("dropdown-box");
 
 //grab the find book link and store it in a variable, 
 //then add an event listener which runs the show input box function
@@ -60,7 +62,10 @@ addBook.addEventListener("click", showInputBoxAdd);
 
 //show input box function, sets the visibility of the input box and closes the menu after a link has been clicked
 function showInputBox(){
+    
+    closeInput();
 
+    inputBox.setAttribute("id", "input-box");
     inputBox.style.visibility = "visible";
     closeMenu();
 
@@ -69,11 +74,20 @@ function showInputBox(){
 //show input box function, sets the visibility of the input box and closes the menu after a link has been clicked
 function showInputBoxAdd(){
 
+    closeInput();
+
     inputBox.setAttribute("id", "input-box-add");
     inputBox.style.visibility = "visible";
-    document.getElementById("dropdown-box").style.visibility = "visible";
+    dropdownBox.style.visibility = "visible";
     closeMenu();
 
 }
 
-//======================================= Closing the input box after submitting ==================================//
+//======================================= Closing the input box  ==================================//
+
+function closeInput() {
+
+    inputBox.style.visibility = "hidden";
+    dropdownBox.style.visibility = "hidden";
+    
+}

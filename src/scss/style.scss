@@ -13,6 +13,7 @@ body{
             color: beige;
         }
 
+//---------------------------------------------------------------------Pop out Nav menu Stolen from w3 schools --------------------------------------------------------------//
 
         /* The Overlay (background) */
     .overlay {
@@ -70,20 +71,26 @@ body{
         right: 35px;
         }
     }
+//---------------------------------------------------------------------Pop out Nav menu Stolen from w3 schools --------------------------------------------------------------//
 
     .container{
 
         #input-box{
             margin-left: 33px;
-            width: 80%;
+            width: 20%;
         }
 
         #input-box-add{
             margin-left: 13px;
             width: 60%;
         }
+
         #dropdown-box{
             width: 30%;
+        }
+
+        #submit-button{
+            width: 25%;
         }
     }
 }

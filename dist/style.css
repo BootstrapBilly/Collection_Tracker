@@ -88,7 +88,7 @@ body .overlay .closebtn {
 
 body .container #input-box {
   margin-left: 33px;
-  width: 80%;
+  width: 20%;
 }
 
 body .container #input-box-add {
@@ -98,5 +98,9 @@ body .container #input-box-add {
 
 body .container #dropdown-box {
   width: 30%;
+}
+
+body .container #submit-button {
+  width: 25%;
 }
 /*# sourceMappingURL=style.css.map */
