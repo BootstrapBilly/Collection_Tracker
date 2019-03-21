@@ -49,6 +49,10 @@ function closeMenu (){
 const inputBox = document.getElementById("input-box");
 //grab the dropdown box and store it in a variable called dropdown box
 const dropdownBox = document.getElementById("dropdown-box");
+//grab the submit box and store it in a variable called submit box
+const submitBox = document.getElementById("submit-button");
+
+const container = document.getElementById("container");
 
 //grab the find book link and store it in a variable, 
 //then add an event listener which runs the show input box function
@@ -67,6 +71,8 @@ function showInputBox(){
 
     inputBox.setAttribute("id", "input-box");
     inputBox.style.visibility = "visible";
+    submitBox.style.visibility = "visible";
+    dropdownBox.remove();
     closeMenu();
 
 }
@@ -79,6 +85,8 @@ function showInputBoxAdd(){
     inputBox.setAttribute("id", "input-box-add");
     inputBox.style.visibility = "visible";
     dropdownBox.style.visibility = "visible";
+    container.insertBefore(dropdownBox, submitBox);
+    submitBox.style.visibility = "visible";
     closeMenu();
 
 }

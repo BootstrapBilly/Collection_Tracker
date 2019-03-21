@@ -87,20 +87,21 @@ body .overlay .closebtn {
 }
 
 body .container #input-box {
-  margin-left: 33px;
-  width: 20%;
+  margin-left: 13px;
+  width: 68%;
 }
 
 body .container #input-box-add {
   margin-left: 13px;
-  width: 60%;
+  width: 40%;
 }
 
 body .container #dropdown-box {
-  width: 30%;
+  width: 26%;
+  margin-right: 4px;
 }
 
 body .container #submit-button {
-  width: 25%;
+  width: 26%;
 }
 /*# sourceMappingURL=style.css.map */
