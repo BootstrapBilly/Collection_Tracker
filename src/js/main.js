@@ -93,9 +93,15 @@ function showInputBoxAdd(){
 
 //======================================= Closing the input box  ==================================//
 
+//grab the submit button and store it in submit variable
+const submit = document.getElementById("submit-button");
+//add an event listener to it
+submit.addEventListener("click", closeInput);
+
 function closeInput() {
 
     inputBox.style.visibility = "hidden";
     dropdownBox.style.visibility = "hidden";
-    
+    submit.style.visibility = "hidden";
+    inputBox.value = "";
 }
