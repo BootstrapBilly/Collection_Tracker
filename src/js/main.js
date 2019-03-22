@@ -105,3 +105,10 @@ function closeInput() {
     submit.style.visibility = "hidden";
     inputBox.value = "";
 }
+
+//========================================= Should I Buy it  ======================================//
+
+//grab the should i buy it button and store it in buyit variable
+const buyIt = document.getElementById("should-i-buy-it");
+//add an event listener to it
+buyIt.addEventListener("click", showInputBoxAdd);
