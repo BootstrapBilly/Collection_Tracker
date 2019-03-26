@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <!-------------------------------------------------------- Head --------------------------------------------------------------------------->
+ <!--================================================================== Head ================================================================-->
 <head>
 
   <meta charset="UTF-8">
@@ -23,60 +23,69 @@
 
 </head>
 
- <!-------------------------------------------------------- Body --------------------------------------------------------------------------->
-<body>
+ <!--================================================================== Body ===================================================================-->
 
-<header class="top-section">
+ <body>
 
-  <!-- Menu icon -->
-  <img src="/src/img/menu.png" class="float-right mr-3" id="menu-open">
+ <!--hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh Header hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+    <header class="top-section">
 
-  <!-- Heading text "Collection tracker" -->
-  <header class="text-left pl-3 mt-4" id="collection">Collection</header>
-  <header class="text-left pl-3" id="tracker">Tracker</header>
+      <!-- Menu icon -->
+      <img src="/src/img/menu.png" class="float-right mr-3" id="menu-open">
 
-  <!-- The overlay for the popout navigation -->
-  <div id="myNav" class="overlay">
+      <!-- Heading text "Collection tracker" -->
+      <header class="text-left pl-3 mt-4" id="collection">Collection</header>
+      <header class="text-left pl-3" id="tracker">Tracker</header>
 
-    <!-- Button to close the overlay navigation -->
-    <a href="javascript:void(0)" class="closebtn" id="menu-close">&times;</a>
+      <!-- The overlay for the popout navigation -->
+      <div id="myNav" class="overlay">
 
-    <!-- Overlay navigation content container -->
-    <div class="overlay-content">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" id="menu-close">&times;</a>
 
-      <!--  navigation  links -->
-      <a href="#" id="find-book">Find a book</a>
-      <a href="#" id="add-book">Add a book</a>
-      <a href="#" id="should-i-buy-it">Should I buy it?</a>
-      <a href="#">Show all books</a>
+        <!-- Overlay navigation content container -->
+        <div class="overlay-content">
+
+          <!--  navigation  links -->
+          <a href="#" id="find-book">Find a book</a>
+          <a href="#" id="add-book">Add a book</a>
+          <a href="#" id="should-i-buy-it">Should I buy it?</a>
+          <a href="#">Show all books</a>
+
+        </div>
+
+      </div>
+
+    </header>
+
+<!--ffffffffffffffffffffffffffffffffffffff Form ffffffffffffffffffffffffffffffffffffff -->
+
+    <div class="container my-3" id="form-container">
+
+      <!-- Input box "Enter Year"-->
+      <input type="number" id="input-box" class="form-control d-inline" placeholder="Enter year" style="visibility: hidden">
+
+      <!-- Dropdown box -->
+      <select class="form-control d-inline" id="dropdown-box" style="visibility: hidden">
+
+          <!-- Dropdown box menu items -->
+        <option value="poor">Bad</option>
+        <option value="fair">Fair</option>
+        <option value="good">Good</option>
+
+      </select>
+
+        <!-- Submit button -->
+      <input id="submit-button" class="form-control d-inline" value ="Submit"  style="visibility: hidden">
 
     </div>
 
-  </div>
+<!--DADADADADADADADADADADADADADADADADADA Display Area DADADADADADADADADADADADADADADADADADA -->
 
-</header>
+      <main class="container bg-danger" id="display-container">
+a
 
-<!-- main content -->
-<main class="container my-3" id="container">
-
-  <!-- Input box "Enter Year"-->
-  <input type="text" id="input-box" class="form-control d-inline" placeholder="Enter year" style="visibility: hidden">
-
-  <!-- Dropdown box -->
-  <select class="form-control d-inline" id="dropdown-box" style="visibility: hidden">
-
-      <!-- Dropdown box menu items -->
-    <option value="poor">Bad</option>
-    <option value="fair">Fair</option>
-    <option value="good">Good</option>
-
-  </select>
-
-    <!-- Submit button -->
-  <input type="text" id="submit-button" class="form-control d-inline" value ="Submit"  style="visibility: hidden">
-
-</main>
-
+      </main>
 
   <script src="app.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

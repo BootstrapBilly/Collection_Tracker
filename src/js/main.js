@@ -1,3 +1,7 @@
+//ToDo - Insert input boxes dynamically into the dom rather than make them visible from the html page
+
+
+
 //=============================================== Opening and closing the menu =========================================//
 
 //grab the buttons to open and close the menus, add event listeners to them which run the functions below to open and close the menus
@@ -25,8 +29,8 @@ const inputBox = document.getElementById("input-box");
 const dropdownBox = document.getElementById("dropdown-box");
 //grab the submit box and store it in a variable called submit box
 const submitBox = document.getElementById("submit-button");
-//grab the container and store it in a variable called container
-const container = document.getElementById("container");
+//grab the form-container and store it in a variable called formContainer
+const formContainer = document.getElementById("form-container");
 
 //grab the find book link and store it in a variable, 
 //then add an event listener which runs the show input box function
@@ -59,7 +63,7 @@ function showAddBookMenu(){
     inputBox.setAttribute("id", "input-box-add");
     inputBox.style.visibility = "visible";
     dropdownBox.style.visibility = "visible";
-    container.insertBefore(dropdownBox, submitBox);
+    formContainer.insertBefore(dropdownBox, submitBox);
     submitBox.style.visibility = "visible";
     closeNavMenu();
 
@@ -73,7 +77,7 @@ function showShouldIBuyMenu(){
     inputBox.setAttribute("id", "input-box-add");
     inputBox.style.visibility = "visible";
     dropdownBox.style.visibility = "visible";
-    container.insertBefore(dropdownBox, submitBox);
+    formContainer.insertBefore(dropdownBox, submitBox);
     submitBox.style.visibility = "visible";
     closeNavMenu();
 
