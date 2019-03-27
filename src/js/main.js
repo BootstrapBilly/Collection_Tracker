@@ -1,6 +1,3 @@
-//ToDo - Insert input boxes dynamically into the dom rather than make them visible from the html page
-
-
 
 //=============================================== Opening and closing the menu =========================================//
 
@@ -21,16 +18,40 @@ function closeNavMenu (){
     document.getElementById("myNav").style.width = "0%";
 
 }
-//=============================================== Showing the input box =========================================//
+//=============================================== Create the form to be dynamically inserted =========================================//
 
-//grab the input box and store it in a variable called inputBox
-const inputBox = document.getElementById("input-box");
-//grab the dropdown box and store it in a variable called dropdown box
-const dropdownBox = document.getElementById("dropdown-box");
-//grab the submit box and store it in a variable called submit box
-const submitBox = document.getElementById("submit-button");
-//grab the form-container and store it in a variable called formContainer
-const formContainer = document.getElementById("form-container");
+//-------------Container for the form------------------------------
+let formContainer = document.createElement("div");
+formContainer.className = "container my-3";
+formContainer.setAttribute("id", "form-container");
+
+//------------Input box "Enter year"------------------------------
+let yearInput = document.createElement("input");
+yearInput.className = "form-control d-inline";
+yearInput.setAttribute("id", "input-box");
+yearInput.setAttribute("type", "number");
+yearInput.setAttribute("placeholder", "Enter year");
+
+//-----------------Dropdown box------------------------------------
+let dropDownBox = document.createElement("select");
+dropDownBox.className = "form-control d-inline";
+dropDownBox.setAttribute("id", "dropdown-box");
+dropDownBox.appendChild(new Option("Poor", "poor"));
+dropDownBox.appendChild(new Option("Fair", "fair"));
+dropDownBox.appendChild(new Option("Good", "good"));
+
+//-----------------Submit button box------------------------------------
+let submitButton = document.createElement("input");
+submitButton.className = "form-control d-inline";
+submitButton.setAttribute("id", "submit-button");
+submitButton.setAttribute("value", "Submit");
+
+//append the 3 elements to the container
+formContainer.appendChild(yearInput);
+formContainer.appendChild(dropDownBox);
+formContainer.appendChild(submitButton);
+
+//=============================================== Event listeners for the nav links =========================================//
 
 //grab the find book link and store it in a variable, 
 //then add an event listener which runs the show input box function
@@ -42,65 +63,39 @@ findBook.addEventListener("click", showFindBookMenu);
 const addBook = document.querySelector("#add-book")
 addBook.addEventListener("click", showAddBookMenu);
 
+//grab the should i buy it button and store it in buyit variable
+const buyIt = document.getElementById("should-i-buy-it");
+//add an event listener to it
+buyIt.addEventListener("click", showShouldIBuyMenu);
+
+
+//========================================= Nav link functions  ======================================//
+
 //show find book menu, sets the visibility of the input menu and closes the menu after a link has been clicked
 function showFindBookMenu(){
     
-    closeInputMenu();
-
-    inputBox.setAttribute("id", "input-box");
-    inputBox.style.visibility = "visible";
-    submitBox.style.visibility = "visible";
-    dropdownBox.remove();
-    closeNavMenu();
-
 }
 
 //show add book menu, sets the visibility input menu and closes the menu after a link has been clicked
 function showAddBookMenu(){
-
-    closeInputMenu();
-
-    inputBox.setAttribute("id", "input-box-add");
-    inputBox.style.visibility = "visible";
-    dropdownBox.style.visibility = "visible";
-    formContainer.insertBefore(dropdownBox, submitBox);
-    submitBox.style.visibility = "visible";
-    closeNavMenu();
-
+    let displayContainer = document.getElementById("display-container");
+    document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
 }
 
 //show add book menu, sets the visibility input menu and closes the menu after a link has been clicked
 function showShouldIBuyMenu(){
 
-    closeInputMenu();
-
-    inputBox.setAttribute("id", "input-box-add");
-    inputBox.style.visibility = "visible";
-    dropdownBox.style.visibility = "visible";
-    formContainer.insertBefore(dropdownBox, submitBox);
-    submitBox.style.visibility = "visible";
-    closeNavMenu();
 
 }
 
-//======================================= Closing the input box  ==================================//
+//=============================================== Submit button =========================================//
 
-//grab the submit button and store it in submit variable
-const submit = document.getElementById("submit-button");
-//add an event listener to it
-submit.addEventListener("click", closeInputMenu);
+// //grab the submit button and store it in submit variable
+// const submit = document.getElementById("submit-button");
+// //add an event listener to it
+// submit.addEventListener("click", closeInputMenu);
+
 
 function closeInputMenu() {
 
-    inputBox.style.visibility = "hidden";
-    dropdownBox.style.visibility = "hidden";
-    submit.style.visibility = "hidden";
-    inputBox.value = "";
 }
-
-//========================================= Should I Buy it  ======================================//
-
-//grab the should i buy it button and store it in buyit variable
-const buyIt = document.getElementById("should-i-buy-it");
-//add an event listener to it
-buyIt.addEventListener("click", showShouldIBuyMenu);
