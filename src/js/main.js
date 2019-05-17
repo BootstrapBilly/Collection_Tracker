@@ -26,11 +26,11 @@ formContainer.className = "container my-3";
 formContainer.setAttribute("id", "form-container");
 
 //------------Input box "Enter year"------------------------------
-let yearInputAdd = document.createElement("input");
-yearInputAdd.className = "form-control d-inline";
-yearInputAdd.setAttribute("id", "input-box-add");
-yearInputAdd.setAttribute("type", "number");
-yearInputAdd.setAttribute("placeholder", "Enter year");
+let yearInput = document.createElement("input");
+yearInput.className = "form-control d-inline";
+yearInput.setAttribute("id", "input-box");
+yearInput.setAttribute("type", "number");
+yearInput.setAttribute("placeholder", "Enter year");
 
 //------------Input box "big version" "Enter year"------------------------------
 let yearInputBig = document.createElement("input");
@@ -60,59 +60,98 @@ let displayContainer = document.getElementById("display-container");
 //grab the find book link and store it in a variable, 
 //then add an event listener which runs the show input box function
 const findBook = document.querySelector("#find-book");
-findBook.addEventListener("click", showFindBookMenu);
+findBook.addEventListener("click", insertFindBookMenu);
 
 //grab the add book link and store it in a variable, 
 //then add an event listener which runs the show input box function
 const addBook = document.querySelector("#add-book")
-addBook.addEventListener("click", showAddBookMenu);
+addBook.addEventListener("click", insertAddBookMenu);
 
 //grab the should i buy it button and store it in buyit variable
 const buyIt = document.getElementById("should-i-buy-it");
 //add an event listener to it
-buyIt.addEventListener("click", showShouldIBuyMenu);
+buyIt.addEventListener("click", insertShouldIbuyMenu);
 
 
-//========================================= Nav link functions  ======================================//
+//========================================= Nav link functions to insert the input menu  ======================================//
 
-//show find book menu, sets the visibility of the input menu and closes the menu after a link has been clicked
-function showFindBookMenu(){
+//Insert the find book input menu into the dom
+function insertFindBookMenu(){
     
-    closeInputMenu();
+    //Firstly call the close input function which removes all other input menus
+    removeInputMenu();
+
+        //append the 2 elements to the input form container
+        formContainer.appendChild(yearInput);
+        formContainer.appendChild(submitButton);
+
+        //append the form container to the body
+        document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+    
+    //close the navigation menu
     closeNavMenu();
 }
 
 //show add book menu, sets the visibility input menu and closes the menu after a link has been clicked
-function showAddBookMenu(){
+function insertAddBookMenu(){
 
-    
+    //Firstly call the close input function which removes all other input menus
+    removeInputMenu();
 
     //append the 3 elements to the container
     formContainer.appendChild(yearInputBig);
     formContainer.appendChild(dropDownBox);
     formContainer.appendChild(submitButton);
 
+    //append the form container to the body
     document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
 
+    //close the navigation menu
     closeNavMenu();
 }
 
 //show add book menu, sets the visibility input menu and closes the menu after a link has been clicked
-function showShouldIBuyMenu(){
+function insertShouldIbuyMenu(){
 
+    //Firstly call the close input function which removes all other input menus
+    removeInputMenu();
+
+        //append the 3 elements to the container
+        formContainer.appendChild(yearInputBig);
+        formContainer.appendChild(dropDownBox);
+        formContainer.appendChild(submitButton);
+
+        //append the form container to the body
+        document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+
+        //close the navigation menu
+        closeNavMenu();
+}
+
+//=============================================== Close input menu function =========================================//
+
+function removeInputMenu() {
+
+    //only run the function if there is an input menu present in the dom
+    if(document.body.contains(formContainer)){
+    
+    //While the form container still has child elements - submit button ect
+    while(formContainer.firstChild) {
+
+        //remove them so the form container is empty
+        formContainer.removeChild(formContainer.firstChild);
+
+    }
+
+    //remove the form container itself
+    document.getElementsByTagName("BODY")[0].removeChild(formContainer);
+}
 
 }
 
 //=============================================== Submit button =========================================//
 
-// //grab the submit button and store it in submit variable
-// const submit = document.getElementById("submit-button");
-// //add an event listener to it
-// submit.addEventListener("click", closeInputMenu);
+//add an event listener to the dynamically inserted submit button
+ submitButton.addEventListener("click", removeInputMenu);
 
 
-function closeInputMenu() {
-
-    document.getElementsByTagName("BODY")[0].removeChild(formContainer);
-
-}
