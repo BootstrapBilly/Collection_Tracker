@@ -196,6 +196,6 @@ class Test {
    
 }
 
-let test = new Test();
+//let test = new Test();
 
-console.log("test");
+//console.log("test");

@@ -26,11 +26,18 @@ formContainer.className = "container my-3";
 formContainer.setAttribute("id", "form-container");
 
 //------------Input box "Enter year"------------------------------
-let yearInput = document.createElement("input");
-yearInput.className = "form-control d-inline";
-yearInput.setAttribute("id", "input-box");
-yearInput.setAttribute("type", "number");
-yearInput.setAttribute("placeholder", "Enter year");
+let yearInputAdd = document.createElement("input");
+yearInputAdd.className = "form-control d-inline";
+yearInputAdd.setAttribute("id", "input-box-add");
+yearInputAdd.setAttribute("type", "number");
+yearInputAdd.setAttribute("placeholder", "Enter year");
+
+//------------Input box "big version" "Enter year"------------------------------
+let yearInputBig = document.createElement("input");
+yearInputBig.className = "form-control d-inline";
+yearInputBig.setAttribute("id", "input-box-big");
+yearInputBig.setAttribute("type", "number");
+yearInputBig.setAttribute("placeholder", "Enter year");
 
 //-----------------Dropdown box------------------------------------
 let dropDownBox = document.createElement("select");
@@ -46,10 +53,7 @@ submitButton.className = "form-control d-inline";
 submitButton.setAttribute("id", "submit-button");
 submitButton.setAttribute("value", "Submit");
 
-//append the 3 elements to the container
-formContainer.appendChild(yearInput);
-formContainer.appendChild(dropDownBox);
-formContainer.appendChild(submitButton);
+let displayContainer = document.getElementById("display-container");
 
 //=============================================== Event listeners for the nav links =========================================//
 
@@ -74,12 +78,23 @@ buyIt.addEventListener("click", showShouldIBuyMenu);
 //show find book menu, sets the visibility of the input menu and closes the menu after a link has been clicked
 function showFindBookMenu(){
     
+    closeInputMenu();
+    closeNavMenu();
 }
 
 //show add book menu, sets the visibility input menu and closes the menu after a link has been clicked
 function showAddBookMenu(){
-    let displayContainer = document.getElementById("display-container");
+
+    
+
+    //append the 3 elements to the container
+    formContainer.appendChild(yearInputBig);
+    formContainer.appendChild(dropDownBox);
+    formContainer.appendChild(submitButton);
+
     document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+
+    closeNavMenu();
 }
 
 //show add book menu, sets the visibility input menu and closes the menu after a link has been clicked
@@ -97,5 +112,7 @@ function showShouldIBuyMenu(){
 
 
 function closeInputMenu() {
+
+    document.getElementsByTagName("BODY")[0].removeChild(formContainer);
 
 }

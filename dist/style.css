@@ -91,15 +91,15 @@ body .container #input-box {
   width: 60%;
 }
 
-body .container #input-box-add {
+body .container #input-box-big {
   margin-left: 13px;
   width: 40%;
+  margin-right: 4px;
 }
 
 body .container #dropdown-box {
   width: 26%;
   margin-right: 4px;
-  z-index: -1;
 }
 
 body .container #submit-button {
