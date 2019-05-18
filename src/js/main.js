@@ -206,7 +206,7 @@ function showDisplayArea(e){
     
     
     console.log(e.target.previousSibling.value);
-     let imgPath = `/src/img/${e.target.previousSibling.value}.jpg`;
+     let imgPath = `/dist/img/${e.target.previousSibling.value}.jpg`;
      bookImage.setAttribute("src", imgPath);
 
     imgDisplayContainer.appendChild(conditionContainer);
