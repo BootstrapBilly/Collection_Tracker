@@ -1,5 +1,5 @@
 body {
-  background: url(/dist/img/mobile-background.svg) no-repeat;
+  background: url(img/mobile-background.svg) no-repeat;
   background-size: cover;
   /* The Overlay (background) */
   /* Position the content inside the overlay */
