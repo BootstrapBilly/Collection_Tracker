@@ -1,382 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
+ <!--================================================================== Head ================================================================-->
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Site Title</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <!-- stylesheet applied until 767px -->
   <link rel="stylesheet" media="screen and (max-width: 767px)" href="style.css">
+  <!-- stylesheet applied until 992px -->
   <link rel="stylesheet" media="screen and (min-width: 768px)" href="ipad.css">
+  <!-- stylesheet applied until 1400px -->
   <link rel="stylesheet" media="screen and (min-width: 992px)" href="desktop.css">
+  <!-- stylesheet applied after 1400px -->
   <link rel="stylesheet" media="screen and (min-width: 1400px)" href="xl.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+
 </head>
-<body>
 
-    
+ <!--================================================================== Body ===================================================================-->
 
-      <!--================================================== Section1 - Showcase ============================================= --> 
+ <body>
 
-      <section id="section1">
+ <!--hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh Header hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+    <header class="top-section">
 
-           <!-- Container for section 1 -->
-          <main class="container py-5">
+      <!-- Menu icon -->
+      <img src="/src/img/menu.png" class="float-right mr-3" id="menu-open">
 
-            
-            <!-- Company Name goes here -->
-            <h2 class="text-white text-center" id="showcase-name">
-              Company name here
-            </h2>
+      <!-- Heading text "Collection tracker" -->
+      <header class="text-left pl-3 mt-4" id="collection">Collection</header>
+      <header class="text-left pl-3" id="tracker">Tracker</header>
 
-            <!-- Description of what the company do here -->
-            <p class="text-white text-center lead py-1 mt-5" id="showcase-description">
-              A bit about what the company do here --, adipisicing elit. Accusamus quisquam non quam totam, dolorem veniam deserunt natus similique nostrum?
-            </p>
+      <!-- The overlay for the popout navigation -->
+      <div id="myNav" class="overlay">
 
-          
-          </main> 
-          
-        
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" id="menu-close">&times;</a>
 
-      </section>
+        <!-- Overlay navigation content container -->
+        <div class="overlay-content">
 
-      <!--================================================== Mini Section1 - Mobile only description ============================================= --> 
-
-      <section id="mini-section1">
-
-           <!-- Container for section 1 -->
-          <main class="container py-5">
-
-            <!-- Description of what the company do here -->
-            <p class="text-center lead p-1" id="showcase-description-mobile">
-              A bit about what the company do here --, adipisicing elit. Accusamus quisquam non quam totam, dolorem veniam deserunt natus similique nostrum?
-            </p>
-
-          
-          </main> 
-          
-        
-
-      </section>
-
-
-      <!--================================================== Section2- Our services   ============================================= --> 
-
-      <section id="section2">
-
-           <!-- Container for section 2 -->
-          <main class="container-fluid pb-4">
-            
-            <!-- Row -->
-            <div class="row">
-
-            <!-- Left col -->
-            <div class="col-lg-5">
-
-            <!-- Accordion starts here (goes up to desktop size)-->
-            <div class="accordion px-2 d-lg-none" id="accordion">
-
-              <!-- First Accordion Section -->
-                <div class="card">
-
-                  <!-- First Accordion Section header container -->
-                  <div class="card-header" id="headingOne">
-                    
-                    <!-- First Accordion Section header text -->
-                      <h5 class="text-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Service name
-                      </h5>
-                    
-                  </div>
-                  
-                  <!-- First Accordion Section description container -->
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-
-                    <!-- First Accordion Section descrption text -->
-                    <div class="card-body">
-                      Service description
-                    </div>
-
-                  </div>
-
-                </div>
-
-              <!-- Second Accordion Section -->
-                <div class="card">
-
-                  <!-- Second Accordion Section header container -->
-                  <div class="card-header" id="headingTwo">
-                    
-                    <!-- Second Accordion Section header text -->
-                      <h5 class="text-center" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                      Service name
-                      </h5>
-                    
-                  </div>
-                  
-                  <!-- Second Accordion Section description container -->
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-
-                    <!-- Second Accordion Section descrption text -->
-                    <div class="card-body">
-                      Service description
-                    </div>
-
-                  </div>
-
-                </div>
-
-              <!-- Third Accordion Section -->
-                <div class="card">
-
-                  <!-- Third Accordion Section header container -->
-                  <div class="card-header" id="headingThree">
-                    
-                    <!-- Third Accordion Section header text -->
-                      <h5 class="text-center" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                      Service name
-                      </h5>
-                    
-                  </div>
-                  
-                  <!-- Third Accordion Section description container -->
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-
-                    <!-- Third Accordion Section descrption text -->
-                    <div class="card-body">
-                      Service description
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-              
-              <!-- Text description of services (from Desktop Up) -->
-              <div class="px-2 d-none d-lg-block" id="desktop-text">
-                <p>Based in CITY HERE we are a BUSINESS HERE company that offers this, that and other stuff</p>
-                <p>SERVICE ONE Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ut.</p>
-                <p>SERVICE TWO Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ut.</p>
-                <p>SERVICE THREE Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ut.</p>
-              </div>
-
-            </div>
-
-            <!-- Right col -->
-            <div class="col-lg-7">
-              
-              <!-- Map API -->
-              <img src="/src/img/map.png" id="map" class="img-fluid">
-
-            </div>
-
-          </div>
-
-        </main> 
-          
-    </section>
-
-
-            <!--================================================== section3 ============================================= --> 
-
-            <section id="section3">
-        
-                <!-- Container for section3 -->
-                <main class="container-fluid pb-4">
-
-                  <!-- Row -->
-                  <div class="row">
-
-                      <!-- Column 1 -->
-                      <div class="col-sm-4">
-
-                        <!-- Card 1 -->
-                          <div class="card mt-2 mx-1">
-
-                            <!-- Image of work goes here -->
-                              <img class="card-img-top" src="/src/img/2.jpg" alt="Card image cap" height="200">
-
-                              <!-- card body -->
-                              <div class="card-body">
-
-                                <!-- Title of work goes here -->
-                                <h5 class="card-title text-center">Title of work goes here</h5>
-
-                                <!-- Description of work -->
-                                <p class="card-text text-center">--Description of work-- adipisicing elit. Voluptatum nesciunt repellat, aliquam officia eius vero ipsam numquam nam omnis dolorem?</p>
-                    
-                              </div>
-                            </div>
-                        </div>
-
-                      <!-- Column 2 -->
-                      <div class="col-sm-4">
-
-                        <!-- Card 2 -->
-                          <div class="card mt-2 mx-1">
-
-                            <!-- Image of work goes here -->
-                              <img class="card-img-top" src="/src/img/3.jpg" alt="Card image cap" height="200">
-
-                              <!-- card body -->
-                              <div class="card-body">
-
-                                <!-- Title of work goes here -->
-                                <h5 class="card-title text-center">Title of work goes here</h5>
-
-                                <!-- Description of work -->
-                                <p class="card-text text-center">--Description of work-- adipisicing elit. Voluptatum nesciunt repellat, aliquam officia eius vero ipsam numquam nam omnis dolorem?</p>
-                    
-                              </div>
-                            </div>
-                        </div>
-
-                      <!-- Column 3 -->
-                      <div class="col-sm-4">
-
-                        <!-- Card 3 -->
-                          <div class="card mt-2 mx-1">
-
-                            <!-- Image of work goes here -->
-                              <img class="card-img-top" src="/src/img/4.jpg" alt="Card image cap" height="200">
-
-                              <!-- card body -->
-                              <div class="card-body">
-
-                                <!-- Title of work goes here -->
-                                <h5 class="card-title text-center">Title of work goes here</h5>
-
-                                <!-- Description of work-->
-                                <p class="card-text text-center">--Description of work-- adipisicing elit. Voluptatum nesciunt repellat, aliquam officia eius vero ipsam numquam nam omnis dolorem?</p>
-                    
-                              </div>
-                            </div>
-                        </div>
-
-                </div>
-
-                </main>
-        
-              </section>
-
- <!--================================================== Mini-section2 - Get in touch ============================================= --> 
-
-      <section id="mini-section2">
-           
-        <!-- Container for Mini-section1 -->
-        <main class="container-fluid py-3 bg-primary">
-          
-          <!-- Row-->
-          <div class="row">
-
-            <!-- Left Col - contact details -->
-            <div class="col-9 col-sm-9 col-md-10 col-lg-9 col-xl-8 pt-2 mt-1 pl-5 d-sm-inline text-sm-center text-md-left text-lg-center text-xl-right">
-
-              <!-- Container for phone contact details -->
-              <div id="phone-contact" >
-                  <!-- Phone text-->
-                  <a class="text-white" href="tel:0208 666 666"><span>Call Us : </span><u id="contact">0208 666 666</u></a>
-
-              <!-- Container for phone email details -->
-              <div id="email-contact">
-                  <!-- email text --> 
-                  <a class="text-white" href="mailto:name@email.com"><span>Email : </span><u id="contact">email@domain.com</u></a>
-
-              </div>
-            
-            </div>
-            
-          </div>
-
-            <!-- right Col - social media icons up to DESKTOP -->
-            <div class="col-3 col-sm-3 col-md-2  d-lg-none">
-              
-              <!-- Sub Row 1-->
-              <div class="row">
-                
-                <!-- Icon 1-->
-                <img src="/src/img/facebook.svg" class="m-1" height="25px">
-                <!-- Icon 2-->
-                <img src="/src/img/twitter.svg" class="m-1" height="25px">
-
-              </div>
-
-              <!-- Sub Row 1-->
-              <div class="row">
-
-                <!-- Icon 3-->
-                <img src="/src/img/instagram.svg" class="m-1" height="25px">
-                <!-- Icon 4-->
-                <img src="/src/img/whatsapp.svg"  class="m-1" height="25px">
-
-              </div>
-              
-
-          </div>
-
-            <!-- right Col - social media icons from DESKTOP UP -->
-            <div class="col-3 col-sm-3 col-md-2 col-lg-3 col-xl-4 pt-2 mt-2 d-none d-lg-block">
-                      
-                <!-- Icon 1-->
-                <img src="/src/img/facebook.svg" class="m-1" height="25px">
-                <!-- Icon 2-->
-                <img src="/src/img/twitter.svg" class="m-1" height="25px">
-
-                <!-- Icon 3-->
-                <img src="/src/img/instagram.svg" class="m-1" height="25px">
-                <!-- Icon 4-->
-                <img src="/src/img/whatsapp.svg"  class="m-1" height="25px">
-
-              </div>
-              
-
-          </div>
-
-          
+          <!--  navigation  links -->
+          <a href="#" id="find-book">Find a book</a>
+          <a href="#" id="add-book">Add a book</a>
+          <a href="#" id="should-i-buy-it">Should I buy it?</a>
+          <a href="#">Show all books</a>
 
         </div>
 
-      </main>
+      </div>
 
-    </section>
+    </header>
+
+<!--ffffffffffffffffffffffffffffffffffffff Form ffffffffffffffffffffffffffffffffffffff -->
 
 
-      <!--================================================== copyright ============================================= --> 
+ 
+<!--DADADADADADADADADADADADADADADADADADA Display Area DADADADADADADADADADADADADADADADADADA -->
 
-              <section id="copyright">
-
-                <!-- Copyright container -->
-                <main class="footer-copyright text-center text-white py-3" id="footer">© 2018 Copyright :
-
-                  <!-- Company name -->
-                    <span class="text-white"> Company name</span>
-
-                    <!-- Attribution -->
-                    <div style="font-size: 8px;">Icons made by <a class="text-white" href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" class="text-white" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" class="text-white" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a><a href='https://www.freepik.com/free-vector/abstract-blue-background_859016.htm' class="text-white">Designed by Freepik</a></div>
-
-                </main>
-
-                  </section>
-      
+      <!-- <main class="container-fluid mx-auto bg-danger" id="display-container">
+<br>
 
 
 
+        <section class="container">
+
+          <img src="/src/img/2019.jpg" alt="" srcset="" width="100%" class="mx-auto d-block">
+
+          <div class="bg-light text-center">
+            Condition : <span>Good</span>
+          </div>
+
+        </section>
+
+      </main> -->
 
   <script src="app.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+
   <script>
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
-            
+   /* Open when someone clicks on the span element */
+       
   </script>
 
 </body>
