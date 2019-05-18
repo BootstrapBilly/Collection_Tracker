@@ -39,6 +39,7 @@ yearInputBig.setAttribute("id", "input-box-big");
 yearInputBig.setAttribute("type", "number");
 yearInputBig.setAttribute("placeholder", "Enter year");
 
+
 //-----------------Dropdown box------------------------------------
 let dropDownBox = document.createElement("select");
 dropDownBox.className = "form-control d-inline";
@@ -167,7 +168,7 @@ function removeInputMenu() {
 
 //-------------Container for the DA ------------------------------
 let displayContainer = document.createElement("div");
-displayContainer.className = "container-fluid mx-auto bg-danger";
+displayContainer.className = "container-fluid mx-auto";
 displayContainer.setAttribute("id", "display-container");
 
 //-------------BR to make it work ------------------------------
@@ -179,13 +180,13 @@ imgDisplayContainer.className = "container";
 
 //-------------Img of book ------------------------------
 let bookImage = document.createElement("img");
-bookImage.setAttribute("src", "/src/img/2019.jpg");
-bookImage.setAttribute("width", "100%");
+bookImage.setAttribute("width", "300px");
+bookImage.setAttribute("height", "400px");
 bookImage.className = "mx-auto d-block";
 
 //-------------Container for the condition ------------------------------
 let conditionContainer = document.createElement("div");
-conditionContainer.className = "bg-light text-center";
+conditionContainer.className = "text-center";
 
 //-------------Text for the condition ------------------------------
 let conditionText = document.createElement("p");
@@ -193,18 +194,26 @@ conditionText.innerHTML = "Condition : <span> Good </span>";
 
 //=============================================== Show display area function =========================================//
 
-function showDisplayArea(){
+function showDisplayArea(e){
 
-    removeInputMenu();
+    
 
     displayContainer.appendChild(lineBreak);
     displayContainer.appendChild(imgDisplayContainer);
 
     imgDisplayContainer.appendChild(bookImage);
+
+    
+    
+    console.log(e.target.previousSibling.value);
+     let imgPath = `/src/img/${e.target.previousSibling.value}.jpg`;
+     bookImage.setAttribute("src", imgPath);
+
     imgDisplayContainer.appendChild(conditionContainer);
 
     conditionContainer.appendChild(conditionText);
 
     document.getElementsByTagName("BODY")[0].insertBefore(displayContainer, null);
 
+    //removeInputMenu();
 }
