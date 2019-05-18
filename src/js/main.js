@@ -53,8 +53,6 @@ submitButton.className = "form-control d-inline";
 submitButton.setAttribute("id", "submit-button");
 submitButton.setAttribute("value", "Submit");
 
-let displayContainer = document.getElementById("display-container");
-
 //=============================================== Event listeners for the nav links =========================================//
 
 //grab the find book link and store it in a variable, 
@@ -85,8 +83,12 @@ function insertFindBookMenu(){
         formContainer.appendChild(yearInput);
         formContainer.appendChild(submitButton);
 
+        if(document.body.contains(displayContainer)){
         //append the form container to the body
         document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+        } else {
+            document.getElementsByTagName("BODY")[0].insertBefore(formContainer, null);
+        }
     
     //close the navigation menu
     closeNavMenu();
@@ -103,9 +105,12 @@ function insertAddBookMenu(){
     formContainer.appendChild(dropDownBox);
     formContainer.appendChild(submitButton);
 
-    //append the form container to the body
-    document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
-
+    if(document.body.contains(displayContainer)){
+        //append the form container to the body
+        document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+        } else {
+            document.getElementsByTagName("BODY")[0].insertBefore(formContainer, null);
+        }
     //close the navigation menu
     closeNavMenu();
 }
@@ -121,14 +126,18 @@ function insertShouldIbuyMenu(){
         formContainer.appendChild(dropDownBox);
         formContainer.appendChild(submitButton);
 
-        //append the form container to the body
-        document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+        if(document.body.contains(displayContainer)){
+            //append the form container to the body
+            document.getElementsByTagName("BODY")[0].insertBefore(formContainer, displayContainer);
+            } else {
+                document.getElementsByTagName("BODY")[0].insertBefore(formContainer, null);
+            }
 
         //close the navigation menu
         closeNavMenu();
 }
 
-//=============================================== Close input menu function =========================================//
+//=============================================== Remove input menu function =========================================//
 
 function removeInputMenu() {
 
@@ -152,6 +161,50 @@ function removeInputMenu() {
 //=============================================== Submit button =========================================//
 
 //add an event listener to the dynamically inserted submit button
- submitButton.addEventListener("click", removeInputMenu);
+ submitButton.addEventListener("click", showDisplayArea);
 
+ //=============================================== Create display display area  =========================================//
 
+//-------------Container for the DA ------------------------------
+let displayContainer = document.createElement("div");
+displayContainer.className = "container-fluid mx-auto bg-danger";
+displayContainer.setAttribute("id", "display-container");
+
+//-------------BR to make it work ------------------------------
+let lineBreak = document.createElement("br");
+
+//-------------Img Container for the DA ------------------------------
+let imgDisplayContainer = document.createElement("div");
+imgDisplayContainer.className = "container";
+
+//-------------Img of book ------------------------------
+let bookImage = document.createElement("img");
+bookImage.setAttribute("src", "/src/img/2019.jpg");
+bookImage.setAttribute("width", "100%");
+bookImage.className = "mx-auto d-block";
+
+//-------------Container for the condition ------------------------------
+let conditionContainer = document.createElement("div");
+conditionContainer.className = "bg-light text-center";
+
+//-------------Text for the condition ------------------------------
+let conditionText = document.createElement("p");
+conditionText.innerHTML = "Condition : <span> Good </span>";
+
+//=============================================== Show display area function =========================================//
+
+function showDisplayArea(){
+
+    removeInputMenu();
+
+    displayContainer.appendChild(lineBreak);
+    displayContainer.appendChild(imgDisplayContainer);
+
+    imgDisplayContainer.appendChild(bookImage);
+    imgDisplayContainer.appendChild(conditionContainer);
+
+    conditionContainer.appendChild(conditionText);
+
+    document.getElementsByTagName("BODY")[0].insertBefore(displayContainer, null);
+
+}
