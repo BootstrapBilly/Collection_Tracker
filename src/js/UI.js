@@ -1,4 +1,9 @@
+import { Shelf } from './Shelf';
+let shelf = new Shelf();
 
+shelf.add(2019, "fair");
+
+console.log(shelf.find(2019));
 //=============================================== Opening and closing the menu =========================================//
 
 //grab the buttons to open and close the menus, add event listeners to them which run the functions below to open and close the menus
@@ -190,7 +195,7 @@ conditionContainer.className = "text-center";
 
 //-------------Text for the condition ------------------------------
 let conditionText = document.createElement("p");
-conditionText.innerHTML = "Condition : <span> Good </span>";
+
 
 //=============================================== Show display area function =========================================//
 
@@ -203,17 +208,26 @@ function showDisplayArea(e){
 
     imgDisplayContainer.appendChild(bookImage);
 
-    
-    
-    console.log(e.target.previousSibling.value);
-     let imgPath = `img/${e.target.previousSibling.value}.jpg`;
-     bookImage.setAttribute("src", imgPath);
+    let imgPath = `img/${e.target.previousSibling.value}.jpg`;
+    bookImage.setAttribute("src", imgPath);
 
+    if(shelf.find(e.target.previousSibling.value) === null){
+
+        conditionText.innerHTML = "Book missing from collection";
+
+    } else {
+
+        conditionText.innerHTML = `Condition : ${shelf.find(e.target.previousSibling.value).condition}`;
+    }
+
+    console.log(e.target.previousSibling.value);
+    
     imgDisplayContainer.appendChild(conditionContainer);
 
     conditionContainer.appendChild(conditionText);
 
     document.getElementsByTagName("BODY")[0].insertBefore(displayContainer, null);
 
-    //removeInputMenu();
+    removeInputMenu();
+
 }
