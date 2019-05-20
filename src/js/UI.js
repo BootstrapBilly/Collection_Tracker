@@ -1,9 +1,6 @@
 import { Shelf } from './Shelf';
 let shelf = new Shelf();
 
-shelf.add(2019, "fair");
-
-console.log(shelf.find(2019));
 //=============================================== Opening and closing the menu =========================================//
 
 //grab the buttons to open and close the menus, add event listeners to them which run the functions below to open and close the menus
@@ -266,8 +263,16 @@ submitButtonAdd.addEventListener("click", insertBook);
 function insertBook(e){
 
     shelf.add(e.target.previousSibling.previousSibling.value, e.target.previousSibling.value);
+
+    let inputval = e.target.previousSibling.previousSibling.value;
     
     removeInputMenu();
+
+    Swal.fire(
+        'Success!',
+        `${inputval} was added to the collection!`,
+        'success'
+      )
 }
 
 //=============================================== Remove Display Area function =========================================//
