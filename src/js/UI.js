@@ -54,10 +54,16 @@ dropDownBox.appendChild(new Option("Fair", "fair"));
 dropDownBox.appendChild(new Option("Good", "good"));
 
 //-----------------Submit button box------------------------------------
-let submitButton = document.createElement("input");
-submitButton.className = "form-control d-inline";
-submitButton.setAttribute("id", "submit-button");
-submitButton.setAttribute("value", "Submit");
+let submitButtonFind = document.createElement("input");
+submitButtonFind.className = "form-control d-inline";
+submitButtonFind.setAttribute("id", "submit-button-find");
+submitButtonFind.setAttribute("value", "Submit");
+
+//-----------------Submit button box------------------------------------
+let submitButtonAdd = document.createElement("input");
+submitButtonAdd.className = "form-control d-inline";
+submitButtonAdd.setAttribute("id", "submit-button-add");
+submitButtonAdd.setAttribute("value", "Submit");
 
 //=============================================== Event listeners for the nav links =========================================//
 
@@ -87,7 +93,7 @@ function insertFindBookMenu(){
 
         //append the 2 elements to the input form container
         formContainer.appendChild(yearInput);
-        formContainer.appendChild(submitButton);
+        formContainer.appendChild(submitButtonFind);
 
         if(document.body.contains(displayContainer)){
         //append the form container to the body
@@ -96,6 +102,8 @@ function insertFindBookMenu(){
             document.getElementsByTagName("BODY")[0].insertBefore(formContainer, null);
         }
     
+    removeDisplayArea();
+
     //close the navigation menu
     closeNavMenu();
 }
@@ -109,7 +117,7 @@ function insertAddBookMenu(){
     //append the 3 elements to the container
     formContainer.appendChild(yearInputBig);
     formContainer.appendChild(dropDownBox);
-    formContainer.appendChild(submitButton);
+    formContainer.appendChild(submitButtonAdd);
 
     if(document.body.contains(displayContainer)){
         //append the form container to the body
@@ -117,6 +125,8 @@ function insertAddBookMenu(){
         } else {
             document.getElementsByTagName("BODY")[0].insertBefore(formContainer, null);
         }
+
+    removeDisplayArea();
     //close the navigation menu
     closeNavMenu();
 }
@@ -130,7 +140,7 @@ function insertShouldIbuyMenu(){
         //append the 3 elements to the container
         formContainer.appendChild(yearInputBig);
         formContainer.appendChild(dropDownBox);
-        formContainer.appendChild(submitButton);
+        formContainer.appendChild(submitButtonAdd);
 
         if(document.body.contains(displayContainer)){
             //append the form container to the body
@@ -164,10 +174,10 @@ function removeInputMenu() {
 
 }
 
-//=============================================== Submit button =========================================//
+//=============================================== Submit button find=========================================//
 
 //add an event listener to the dynamically inserted submit button
- submitButton.addEventListener("click", showDisplayArea);
+ submitButtonFind.addEventListener("click", showDisplayArea);
 
  //=============================================== Create display display area  =========================================//
 
@@ -189,6 +199,9 @@ bookImage.setAttribute("width", "300px");
 bookImage.setAttribute("height", "400px");
 bookImage.className = "mx-auto d-block";
 
+
+
+
 //-------------Container for the condition ------------------------------
 let conditionContainer = document.createElement("div");
 conditionContainer.className = "text-center";
@@ -201,33 +214,79 @@ let conditionText = document.createElement("p");
 
 function showDisplayArea(e){
 
-    
-
     displayContainer.appendChild(lineBreak);
     displayContainer.appendChild(imgDisplayContainer);
 
     imgDisplayContainer.appendChild(bookImage);
-
+    
     let imgPath = `img/${e.target.previousSibling.value}.jpg`;
-    bookImage.setAttribute("src", imgPath);
+    let missingPath = "img/overlayimg.svg";
 
     if(shelf.find(e.target.previousSibling.value) === null){
 
-        conditionText.innerHTML = "Book missing from collection";
+    bookImage.setAttribute("src", missingPath);
+    conditionText.innerHTML = `<span style="color: red;">${e.target.previousSibling.value} is missing from your collection</span>`;
 
     } else {
 
-        conditionText.innerHTML = `Condition : ${shelf.find(e.target.previousSibling.value).condition}`;
+        bookImage.setAttribute("src", imgPath);
+
+        if (shelf.find(e.target.previousSibling.value).condition === "good"){
+
+        conditionText.innerHTML = `${e.target.previousSibling.value} is in <span style="color : green;">${shelf.find(e.target.previousSibling.value).condition}</span> condition`;
+
+        } else if (shelf.find(e.target.previousSibling.value).condition === "fair"){
+
+            conditionText.innerHTML = `${e.target.previousSibling.value} is in <span style="color : sienna;">${shelf.find(e.target.previousSibling.value).condition}</span> condition`;
+
+        } else {
+
+            conditionText.innerHTML = `${e.target.previousSibling.value} is in <span style="color : red;">${shelf.find(e.target.previousSibling.value).condition}</span> condition`;
+
+        }
     }
 
-    console.log(e.target.previousSibling.value);
-    
-    imgDisplayContainer.appendChild(conditionContainer);
+
+    displayContainer.appendChild(conditionContainer);
 
     conditionContainer.appendChild(conditionText);
 
     document.getElementsByTagName("BODY")[0].insertBefore(displayContainer, null);
 
     removeInputMenu();
+
+}
+
+//=============================================== Submit button Add =========================================//
+
+//add an event listener to the dynamically inserted submit button
+submitButtonAdd.addEventListener("click", insertBook);
+
+//=============================================== Insert book function =========================================//
+function insertBook(e){
+
+    shelf.add(e.target.previousSibling.previousSibling.value, e.target.previousSibling.value);
+    
+    removeInputMenu();
+}
+
+//=============================================== Remove Display Area function =========================================//
+
+function removeDisplayArea() {
+
+    //only run the function if there is an display area present in the dom
+    if(document.body.contains(displayContainer)){
+    
+    //While the form container still has child elements - submit button ect
+    while(displayContainer.firstChild) {
+
+        //remove them so the form container is empty
+        displayContainer.removeChild(displayContainer.firstChild);
+
+    }
+
+    //remove the form container itself
+    document.getElementsByTagName("BODY")[0].removeChild(displayContainer);
+}
 
 }
