@@ -1,25 +1,14 @@
 import { Shelf } from './Shelf';
 let shelf = new Shelf();
 
+shelf.add(0, "FAIR");
+
 //=============================================== Opening and closing the menu =========================================//
 
 //grab the buttons to open and close the menus, add event listeners to them which run the functions below to open and close the menus
-document.getElementById("menu-open").addEventListener("click", openNavMenu);
-document.getElementById("menu-close").addEventListener("click", closeNavMenu);
+document.getElementById("menu-open").addEventListener("click", () => document.getElementById("myNav").style.width = "100%");
+document.getElementById("menu-close").addEventListener("click", () => document.getElementById("myNav").style.width = "0%");
  
-//Open menu function called on click of the open menu button
-function openNavMenu (){
-
-    document.getElementById("myNav").style.width = "100%";
-    
-}
-
-//close menu function called on click of the close menu button
-function closeNavMenu (){
-
-    document.getElementById("myNav").style.width = "0%";
-
-}
 //=============================================== Create the form to be dynamically inserted =========================================//
 
 //-------------Container for the form------------------------------
@@ -211,6 +200,7 @@ let conditionText = document.createElement("p");
 
 function showDisplayArea(e){
 
+
     displayContainer.appendChild(lineBreak);
     displayContainer.appendChild(imgDisplayContainer);
 
@@ -219,12 +209,7 @@ function showDisplayArea(e){
     let imgPath = `img/${e.target.previousSibling.value}.jpg`;
     let missingPath = "img/overlayimg.svg";
 
-    if(shelf.find(e.target.previousSibling.value) === null){
-
-    bookImage.setAttribute("src", missingPath);
-    conditionText.innerHTML = `<span style="color: red;">${e.target.previousSibling.value} is missing from your collection</span>`;
-
-    } else {
+    if(shelf.find(e.target.previousSibling.value) !== null){
 
         bookImage.setAttribute("src", imgPath);
 
@@ -241,6 +226,13 @@ function showDisplayArea(e){
             conditionText.innerHTML = `${e.target.previousSibling.value} is in <span style="color : red;">${shelf.find(e.target.previousSibling.value).condition}</span> condition`;
 
         }
+
+
+    } else {
+
+        bookImage.setAttribute("src", missingPath);
+        conditionText.innerHTML = `<span style="color: red;">${e.target.previousSibling.value} is missing from your collection</span>`;
+
     }
 
 
