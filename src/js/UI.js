@@ -7,7 +7,13 @@ shelf.add(0, "FAIR");
 
 //grab the buttons to open and close the menus, add event listeners to them which run the functions below to open and close the menus
 document.getElementById("menu-open").addEventListener("click", () => document.getElementById("myNav").style.width = "100%");
-document.getElementById("menu-close").addEventListener("click", () => document.getElementById("myNav").style.width = "0%");
+document.getElementById("menu-close").addEventListener("click", closeNavMenu());
+
+function closeNavMenu () {
+
+    document.getElementById("myNav").style.width = "0%"    
+    
+}
  
 //=============================================== Create the form to be dynamically inserted =========================================//
 

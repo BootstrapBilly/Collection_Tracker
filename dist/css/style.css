@@ -1,5 +1,5 @@
 body {
-  background: url(img/mobile-background.svg) no-repeat;
+  background: url(../img/mobile-background.svg) no-repeat;
   background-size: cover;
   /* The Overlay (background) */
   /* Position the content inside the overlay */
@@ -109,21 +109,5 @@ body .container #submit-button-find {
 
 body .container #submit-button-add {
   width: 26%;
-}
-
-body #img-display-container {
-  position: relative;
-}
-
-body #overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Black background with opacity */
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
